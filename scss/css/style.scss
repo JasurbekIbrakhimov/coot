@@ -1,0 +1,895 @@
+$blue:#0E1734;
+$textblue:#192252;
+$grey: #848FAC;
+
+
+@font-face {
+    font-family: 'inter';
+    src: url('../fonts/Inter-Regular.woff2') format('woff2'),
+        url('../fonts/Inter-Regular.woff') format('woff');
+    font-display: swap;
+    font-weight: 400;    
+}
+@font-face {
+    font-family: 'inter';
+    src: url('../fonts/Inter-Medium.woff2') format('woff2'),
+        url('../fonts/Inter-Medium.woff') format('woff');
+    font-display: swap;
+    font-weight: 500;    
+}
+@font-face {
+    font-family: 'monts';
+    src: url('../fonts/Montserrat-SemiBold.woff2') format('woff2'),
+        url('../fonts/Montserrat-SemiBold\ \(5\).woff') format('woff');
+    font-display: swap;
+    font-weight: 600;    
+}
+
+
+%interregular{
+    font-family: 'inter';
+    font-weight: 400;    
+
+}
+%intermedium{
+    font-family: 'inter';
+    font-weight: 500;    
+}
+%monts{
+    font-family: 'monts';
+    font-weight: 600;    
+}
+html{
+    box-sizing: border-box;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+p{
+    padding: 0;
+    margin: 0;
+    font-weight: normal;
+}
+button{
+    cursor: pointer;
+}
+
+body{
+    font-family:'Inter';
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.space{
+    padding-top: 80px;
+}
+
+.link{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #424F7B;
+    font-size: 22px;
+
+}
+.uptitle{
+    font-size: 16px;
+    color: #424F7B;
+    @extend %intermedium;
+
+}
+
+.container{
+    padding: 0 120px;
+}
+.title{
+    @extend %monts;
+    color:$textblue;
+    font-size: 25px;
+    line-height: 150%;
+}
+.text{
+    @extend %interregular;
+    color: $grey;
+    font-size: 18px;
+    margin: 24px 0 32px;
+
+}
+.btn{
+    background-color: $textblue;
+    color:#fff;
+    @extend %intermedium;
+    border-radius: 4px;
+    padding: 14px 16px;
+    border:none;
+    transition: all 0.1s ease-in;
+    &:hover{
+        background-color:#28314e;
+    }
+
+    &:active{
+        background-color: #343f60;
+    }
+}
+
+.header{
+    .title{
+        font-size: 36px;
+    }
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @extend %interregular;
+        padding: 20px 0;
+    }
+
+    &__menu{
+        display: flex;
+        gap: 32px;
+        color:$textblue;        
+    }
+
+    &__bottom{
+        display: flex;
+        align-items: center;
+        gap:90px;
+        padding-top: 80px;
+    }
+
+    &__img{
+        height: 580px;      
+    }
+
+    &-btn{
+        border: 2px solid $blue;
+        height: 50px;
+        width: 50px;
+        border-radius: 7px;
+        display: none;
+        flex-direction: column-reverse;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+        &__line{
+            height: 3px;
+            width: 80%;
+            background-color: $blue;
+        }
+    }
+    
+    
+    
+}
+/*====hotel=====*/
+.hotel{
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    
+    &__img{
+        height: 576px;
+    }
+   
+}
+/*====CABIN=====*/
+.cabin{
+    &__item{
+        display: flex;
+        gap: 120px;
+        align-items: center;
+    }
+    &__img{
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+    &__info{
+        .text{
+            line-height: 26px;
+        }
+    }
+  
+}
+/*====ROOM=====*/
+.room{
+    &__top{
+        text-align: center;
+        .text{
+            width: 50%;
+            margin: 20px auto;
+        }
+    }
+    
+    &__inner{
+        display: flex;
+        margin-top: 88px;
+        gap: 24px;
+    }
+    &__img{
+        width: 100%;
+        height: 490px;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+    &__title{
+        @extend %monts;
+        font-size: 24px;
+        margin-top: 32px;
+    }
+
+}
+/*==== GET ROOM=====*/
+.get-room{
+   display: flex; 
+   align-items: center;
+   gap: 100px;
+   &__info{
+       .text{
+           width: 70%;
+       }
+   }
+   &__link{
+        font-size: 12px;
+        @extend %monts;
+        margin-left: 25px;
+        font-weight: bold;
+   }
+
+   &__accordion{
+       display: flex;
+       flex-direction: column;
+       gap: 24px;
+
+    }
+
+    &__head{
+        color: #424F7B;
+        @extend %monts;
+        font-size: 20px;
+        position: relative;
+        &::after{
+            content: '';
+            background-image: url(../img/Arrow__Down.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size:24px ;
+            height: 36px;
+            width: 36px;
+            border-radius: 50%;
+            background-color: #FFECE2;
+            position: absolute;
+            top: 0;
+            right: 0;
+
+
+            
+        }
+    }
+
+    &__body{
+        @extend %interregular;
+        font-size: 15px;
+        color:#848FAC;
+        font-family: 'Inter';
+        padding-top: 24px;
+        display: none;  
+    }
+    
+   &__item{
+        background: #FFFFFF;
+        border-radius: 4px;
+        padding: 37px 36px;
+        box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.09);
+        &.active{
+            .get-room__head::after{
+                background: #FF620A;
+                background-image: url('../img/Arrow\ -\ Down\ 2.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size:24px ;
+                height: 36px;
+                width: 36px;
+            }
+            .get-room__body{
+                display: block;
+            }
+        }
+        
+   }
+   
+
+}
+/*====CUSTOMER=====*/
+ .customer{
+    text-align: center;
+    &__img{
+        margin-top: 60px;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+    }    
+
+    &__text{
+        width: 70%;
+        margin: auto;
+        padding: 40px 0 44px;
+    }
+    &__name{
+        font-weight: bold;
+    }
+    &__dots{
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 26px;
+       
+        &-item{
+            width: 8px;
+            height: 8px;
+            background: rgba(250, 176, 71, 0.35);
+            border-radius: 50%;
+            cursor: pointer;
+            &.active{
+                background: #FAB047;
+                height: 12px;
+                width: 12px;
+
+            }
+
+
+        }
+    }
+}
+/*====FOOTER=====*/
+.footer{
+    background-color: #0B265A;
+    color: #fff;
+    padding: 120px 0;
+    margin-top: 80px;
+    &__inner{
+        display: flex;
+        gap: 400px;
+    }
+    &__text{
+        margin: 13px 0 36px;
+        font-size: 16px;
+        line-height: 28px;
+        width:50%;
+        color: #D9DBDE;
+    }
+    &__socials{
+        display: flex;
+        gap: 24px;
+    }
+    &__content{
+        display: flex;
+        gap: 100px;
+    }
+    &__list{
+        color: #D9DBDE;
+    }
+    &__title{
+        color: #fff;
+        font-family: 'Inter';
+        @extend %monts;
+        font-size: 18px; 
+        margin-bottom: 24px;       
+
+    }
+    &__list-item{
+        margin-bottom: 24px;
+    }
+
+}
+
+/* =========================medida========================= */
+@media (max-width: 1600px){
+    .footer{
+        &__inner{
+            gap: 30%;
+        }
+        &__content{
+            gap: 50px;
+            width: 100%;
+            justify-content: space-between;
+        }
+        &__text{
+            width: 70%;
+        }
+    }
+}
+
+@media (max-width: 1200px){
+
+    .container {
+        padding: 0px 60px;
+    }
+
+    .header{
+        &__bottom{
+            padding-top: 40px;
+        }
+
+        &__img{
+            height: 500px;
+            width: 500px;
+            object-fit: contain;
+        }
+    }
+    .room{
+        &__inner{
+            margin-top: 50px;
+        }
+        &__item{
+            .text{
+                font-size: 14px;
+                margin: 10px 0 10px;
+            }
+        }
+        &__title{
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    }
+    .get-room{
+        flex-direction: column;
+    }
+    .footer{
+        &__inner{
+            gap: 20%;
+        }
+        &__content{
+            gap: 50px;
+            width: 100%;
+            justify-content: space-between;
+        }
+        &__text{
+            line-height: 25px;
+            width: 80%;
+        }
+    }
+   
+      
+}
+
+@media (max-width: 970px){
+    .header{
+        &__bottom{
+            flex-direction: column-reverse;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        &__img{
+            width: 300px;
+            height: 300px;
+        }
+
+        .title{
+            font-size: 25px;
+        }
+
+        .text{
+            font-size: 14px;
+            margin: 13px 0 16px;
+        }
+    }
+
+    .hotel{
+        gap: 80px;
+        
+    }
+    .cabin{
+        &__item{
+            gap: 50px;
+        }
+        &__img{
+            height: 300px;
+        }
+    }
+    .room{
+        &__top{
+            .text{
+                width: 80%;
+            }
+        }
+        
+        
+        &__img{
+            height: 400px;
+        }
+        &__title{
+            font-size: 20px;
+            margin-top: 12px
+        }
+        &__inner{
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        &__item{
+            width: 45%;
+
+            .text{
+                font-size: 12px;
+            }
+            .link{
+                font-size: 18px;    
+            }
+        }
+    }
+    .customer{
+        &__text{
+            width: 100%;
+        }
+    }
+    .footer{
+       &__inner{
+           flex-wrap:wrap;
+           gap: 50px;
+       }
+    }
+    
+    
+
+
+}
+
+@media (max-width: 770px){
+    .container{
+        padding: 0 30px;
+    }
+
+    .header{
+        &__top .btn{
+            display: none;
+        }
+
+        &__menu{
+            display: none;
+        }
+
+        &__bottom{
+            padding-top: 50px;
+            gap: 60px
+        }
+
+        &-btn{
+            display: flex;
+        }
+    }
+    .hotel{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 60px;
+        .text{
+            margin: 14px 0 12px;   
+            font-size: 11px; 
+        }
+        &__img {
+            height: 400px;
+            width: 80%;
+            object-fit: contain;
+        }
+    }
+    
+    .cabin{
+        &__img{
+            height: 250px;
+        }
+        &__info{
+            .title{
+                font-size: 20px;
+            }
+            .text{
+                font-size: 13px;
+                margin: 13px 0 10px;
+                line-height: 18px;
+            }
+        }
+    }
+
+    .room{
+        &__item{
+            width: 100%;
+        }
+    }
+   
+}
+
+@media (max-width: 620px){
+    .cabin{
+        &__item{          
+            flex-wrap: wrap; 
+            margin-bottom: 50px;
+            text-align: center;
+            gap: 30px;
+        }
+
+        &__item_revers{
+            flex-direction: column-reverse;
+        }
+        
+    }   
+    .room{
+        &__top{
+            margin: 10px auto;
+            width: 100%;
+            .text{
+                font-size: 15px;
+                width: 100%;
+            }
+        }
+    }
+    .room_item-top{
+        margin-top: 10px;
+        padding-top: 20px;
+    }
+    .get-room{
+        gap: 70px;
+        .title{
+            font-size: 20px;
+            
+        }
+        .text{
+            width: 100%;
+            font-size: 14px;
+        }
+        &__head{
+            font-size: 15px;
+        }
+    }
+
+    .customer{
+        &__img{
+            margin-top: 30px;
+            width: 80px;
+            height: 80px;
+        }
+        &__text{
+            font-size: 15px;
+            padding: 30px 0 30px;
+        }
+    }
+    .footer{
+        padding: 40px 0;
+        &__content{
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
+        &__item{
+            width: 45%;
+        }
+    }
+
+    
+
+}
+
+
+@media (max-width: 480px){
+    .header{
+        &__top{
+            padding: 10px 0
+        }
+
+        &__img{
+            width: 290px;
+            height: 290px;
+        }
+
+        &-btn{
+            height: 40px;
+            width: 40px;
+        }
+        &__content{
+            .btn{
+                padding: 13px 10px;
+            }
+
+            .title{
+                font-size: 20px;
+            }
+
+            .text{
+                font-size: 11px;
+                margin: 5px 0 9px;
+            }
+        }
+        &__bottom{
+            gap: 30px
+        }
+    }
+
+
+    .hotel{
+        gap: 12px;
+        &__img{
+            height: 310px;
+            width: 100%;
+            object-fit: cover;
+        }
+        .title{
+            font-size: 15px;
+        }
+        .text{
+            font-size: 10px;
+        }
+        .btn{
+            padding: 10px 10px;
+        }
+    }
+
+
+    .cabin{
+        &__item{
+            gap: 10px;
+        }
+    }
+
+    .space {
+        padding-top: 30px;
+    }
+    .room_item-top{
+        margin-top: 5px;
+        padding-top: 5px;
+    }
+    .get-room{
+        &__head{
+            font-size: 12px;
+            &::after{
+                height: 30px;
+                width: 30px;
+            }
+        }
+        &__item{
+            padding: 34px 20px;
+        }
+        &__item.active{
+            .get-room__head::after{
+                height: 30px;
+                width: 30px;
+            }
+        }
+        &__link{
+            font-size: 10px;
+            margin-left: 10px;
+        }
+    }
+    .customer{
+        .title{
+            font-size: 20px;
+        }
+        &__text{
+            font-size: 10px;
+        }
+        .uptitle{
+            font-size: 13px;
+        }
+        &__dots-item{
+            width: 5px;
+            height: 5px;
+        }
+        &__dots-item.active{
+            height: 8px;
+            width: 8px;
+        }
+    }
+    .footer{
+        margin-top: 50px;
+        padding: 30px 0;
+        &__inner{
+            text-align: center;
+        }
+        &__text{
+            margin: 20px auto ;
+        }
+        &__socials{
+            justify-content: center;
+        }
+        &__content{
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        &__item{
+            width: 100%;
+        }
+    }
+    
+}
+
+@media (max-width: 340px){
+    .get-room{
+        .title{
+            font-size: 18px;
+        }
+        .uptitle {
+            font-size: 10px;
+        }    
+        .text{
+            font-size: 12px;
+            margin: 14px 0 20px;
+        }
+        &__head {
+            font-size: 11px;
+        }
+
+        &__body{
+            font-size: 12px;
+        }
+        &__item{
+            padding: 22px 8px;
+        }
+        &__link{
+            margin-left: 3px;
+        }
+        &__head{
+            font-size: 10px;
+            &::after{
+                height: 20px;
+                width: 20px;
+                background-size:15px;
+            }
+        }
+        &__item.active{
+            .get-room__head::after{
+                height: 20px;
+                width: 20px;
+                background-size:15px;
+            }
+        }
+    }
+    .customer{
+        &__text{
+            font-size: 8px;
+            padding: 15px 0 15px ;
+        }
+        &__dots{
+            margin-top: 15px;
+        }
+    }
+    .footer{
+        margin-top: 35px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
